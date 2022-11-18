@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{2C906F72-313C-4706-B889-F17CBECCB7DA}</ProjectGuid>
+    <ProjectGuid>{36E2D928-25B9-452F-BD1C-829D50CEE4CE}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
@@ -85,6 +85,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\PatternSpectrumConsole\PatternSpectrum.cpp" />
     <ClCompile Include="..\SkeletonLib\BSTrans.cpp" />
     <ClCompile Include="..\SkeletonLib\ContourTracer.cpp" />
     <ClCompile Include="..\SkeletonLib\Geometry.cpp" />
@@ -93,10 +94,11 @@
     <ClCompile Include="..\SkeletonLib\StructureTD.cpp" />
     <ClCompile Include="..\SkeletonLib\TreeAVL.cpp" />
     <ClCompile Include="..\SkeletonLib\TriDel.cpp" />
+    <ClCompile Include="GeneralizedSpectrum.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="PatternSpectrum.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\PatternSpectrumConsole\PatternSpectrum.h" />
     <ClInclude Include="..\SkeletonLib\BitRaster.h" />
     <ClInclude Include="..\SkeletonLib\BSTrans.h" />
     <ClInclude Include="..\SkeletonLib\ContourTracer.h" />
@@ -108,7 +110,7 @@
     <ClInclude Include="..\SkeletonLib\StructureTD.h" />
     <ClInclude Include="..\SkeletonLib\TreeAVL.h" />
     <ClInclude Include="..\SkeletonLib\TriDel.h" />
-    <ClInclude Include="PatternSpectrum.h" />
+    <ClInclude Include="GeneralizedSpectrum.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

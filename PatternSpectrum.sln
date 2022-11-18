@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PatternSpectrumConsole", "PatternSpectrumConsole\PatternSpectrumConsole.vcxproj", "{2C906F72-313C-4706-B889-F17CBECCB7DA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GeneralizedSpectrumConsole", "GeneralizedSpectrumConsole\GeneralizedSpectrumConsole.vcxproj", "{36E2D928-25B9-452F-BD1C-829D50CEE4CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -15,6 +17,10 @@ Global
 		{2C906F72-313C-4706-B889-F17CBECCB7DA}.Debug|x64.Build.0 = Debug|x64
 		{2C906F72-313C-4706-B889-F17CBECCB7DA}.Release|x64.ActiveCfg = Release|x64
 		{2C906F72-313C-4706-B889-F17CBECCB7DA}.Release|x64.Build.0 = Release|x64
+		{36E2D928-25B9-452F-BD1C-829D50CEE4CE}.Debug|x64.ActiveCfg = Debug|x64
+		{36E2D928-25B9-452F-BD1C-829D50CEE4CE}.Debug|x64.Build.0 = Debug|x64
+		{36E2D928-25B9-452F-BD1C-829D50CEE4CE}.Release|x64.ActiveCfg = Release|x64
+		{36E2D928-25B9-452F-BD1C-829D50CEE4CE}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

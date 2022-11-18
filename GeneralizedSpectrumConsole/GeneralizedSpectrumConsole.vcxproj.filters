@@ -21,18 +21,18 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
-    <Filter Include="Source Files\SkeletonLib">
-      <UniqueIdentifier>{507c8d4f-62cf-4ac1-b50c-1309fda8e6d1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\SkeletonLib">
-      <UniqueIdentifier>{7612309e-7cf4-4540-87f1-d980c0d01c71}</UniqueIdentifier>
+      <UniqueIdentifier>{e39356bc-f6df-406c-8453-24f5e11420fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SkeletonLib">
+      <UniqueIdentifier>{a002a166-650a-4cca-a7a2-74e76b3e0fe8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PatternSpectrum.cpp">
+    <ClCompile Include="GeneralizedSpectrum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\SkeletonLib\BSTrans.cpp">
@@ -59,9 +59,12 @@
     <ClCompile Include="..\SkeletonLib\TriDel.cpp">
       <Filter>Source Files\SkeletonLib</Filter>
     </ClCompile>
+    <ClCompile Include="..\PatternSpectrumConsole\PatternSpectrum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PatternSpectrum.h">
+    <ClInclude Include="GeneralizedSpectrum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\SkeletonLib\BitRaster.h">
@@ -96,6 +99,9 @@
     </ClInclude>
     <ClInclude Include="..\SkeletonLib\delaunator.hpp">
       <Filter>Header Files\SkeletonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PatternSpectrumConsole\PatternSpectrum.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
