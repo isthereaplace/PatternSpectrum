@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+    <Filter Include="Source Files\SkeletonLib">
+      <UniqueIdentifier>{507c8d4f-62cf-4ac1-b50c-1309fda8e6d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SkeletonLib">
+      <UniqueIdentifier>{7612309e-7cf4-4540-87f1-d980c0d01c71}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternSpectrum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SkeletonLib\BSTrans.cpp">
+      <Filter>Source Files\SkeletonLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SkeletonLib\ContourTracer.cpp">
+      <Filter>Source Files\SkeletonLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SkeletonLib\Geometry.cpp">
+      <Filter>Source Files\SkeletonLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SkeletonLib\SpanTree.cpp">
+      <Filter>Source Files\SkeletonLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SkeletonLib\StructureSkel.cpp">
+      <Filter>Source Files\SkeletonLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SkeletonLib\StructureTD.cpp">
+      <Filter>Source Files\SkeletonLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SkeletonLib\TreeAVL.cpp">
+      <Filter>Source Files\SkeletonLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SkeletonLib\TriDel.cpp">
+      <Filter>Source Files\SkeletonLib</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PatternSpectrum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SkeletonLib\BitRaster.h">
+      <Filter>Header Files\SkeletonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SkeletonLib\BSTrans.h">
+      <Filter>Header Files\SkeletonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SkeletonLib\ContourTracer.h">
+      <Filter>Header Files\SkeletonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SkeletonLib\Geometry.h">
+      <Filter>Header Files\SkeletonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SkeletonLib\LinkedList.h">
+      <Filter>Header Files\SkeletonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SkeletonLib\SpanTree.h">
+      <Filter>Header Files\SkeletonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SkeletonLib\StructureSkel.h">
+      <Filter>Header Files\SkeletonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SkeletonLib\StructureTD.h">
+      <Filter>Header Files\SkeletonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SkeletonLib\TreeAVL.h">
+      <Filter>Header Files\SkeletonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SkeletonLib\TriDel.h">
+      <Filter>Header Files\SkeletonLib</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
