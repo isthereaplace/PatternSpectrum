@@ -1355,6 +1355,66 @@ std::list<QPair<int, int>> GeneratePairs(list<int> A, list<int> B) {
 }
 
 
+void Lacuna::TriangulateForViz(double rad, list<QPair<int, int>>& Edges, vector<double>& Vert) {
+	Edges.clear();
+	Vert.clear();
+	set<QPair<double, double>> Ends;
+	for (auto iBone : Bones) {
+		if (iBone->dest->r() >= rad) {
+			QPointF extr = iBone->GetExtremePoint(rad);
+			Ends.insert({ extr.x(), extr.y() });
+		}
+	}
+	for (auto Pt: Ends) {
+		Vert.push_back(Pt.first);
+		Vert.push_back(Pt.second);
+	}
+
+	if (Vert.size() / 2 > 1) {
+		if (Vert.size() / 2 > 3) {
+			double x_min = Vert[0];
+			double x_max = Vert[0];
+			double y_min = Vert[1];
+			double y_max = Vert[1];
+			for (int i = 1; i < Vert.size() / 2; i++) {
+				x_min = std::min(x_min, Vert[2 * i]);
+				x_max = std::max(x_max, Vert[2 * i]);
+				y_min = std::min(y_min, Vert[2 * i + 1]);
+				y_max = std::max(y_max, Vert[2 * i + 1]);
+			}
+			if (x_min == x_max || y_min == y_max) {
+				int shift = (x_min == x_max) ? 1 : 0;
+				vector<pair<double, int>> temp;
+				for (int i = 0; i < Vert.size() / 2; i++) {
+					temp.push_back(make_pair(Vert[2 * i + shift], i));
+				}
+				sort(temp.begin(), temp.end());
+				for (int i = 0; i < temp.size() - 1; i++) {
+					Edges.push_back({ temp[i].second, temp[i + 1].second });
+				}
+			}
+			else {
+				auto DT = delaunator::Delaunator(Vert);
+				for (int i = 0; i < DT.triangles.size() / 3; i++) {
+					vector<int> Idx = { (int)DT.triangles[3 * i + 0], (int)DT.triangles[3 * i + 1], (int)DT.triangles[3 * i + 2] };
+					Edges.push_back({ Idx[0], Idx[1] });
+					Edges.push_back({ Idx[0], Idx[2] });
+					Edges.push_back({ Idx[1], Idx[2] });
+				}
+			}
+		}
+		else if (Vert.size() == 3) {
+			Edges.push_back({ 0, 1 });
+			Edges.push_back({ 0, 2 });
+			Edges.push_back({ 1, 2 });
+		}
+		else {
+			Edges.push_back({ 0, 1 });
+		}
+	}
+}
+
+
 double Lacuna::Triangulate(double rad) {
 	list<QPair<int, int>> Edges;
 	vector<QPointF> Ends;
@@ -1386,10 +1446,9 @@ double Lacuna::Triangulate(double rad) {
 		Conn[idx].push_back(Ends.size() - 1);
 	}
 
-	std::list<QPair<int, int>> Add;
-	Edges.clear();
-	if (Vert.size() > 2) {
-		if (Vert.size() > 6) {
+	list<QPair<int, int>> Add;
+	if (Vert.size() / 2 > 1) {
+		if (Vert.size() / 2 > 3) {
 			double x_min = Vert[0];
 			double x_max = Vert[0];
 			double y_min = Vert[1];
@@ -1422,7 +1481,7 @@ double Lacuna::Triangulate(double rad) {
 				}
 			}
 		}
-		else if (Vert.size() > 4) {
+		else if (Vert.size() / 2 == 3) {
 			Add = GeneratePairs(Conn[0], Conn[1]); Edges.splice(Edges.end(), Add);
 			Add = GeneratePairs(Conn[0], Conn[2]); Edges.splice(Edges.end(), Add);
 			Add = GeneratePairs(Conn[1], Conn[2]); Edges.splice(Edges.end(), Add);

@@ -79,6 +79,7 @@ struct Lacuna {
 
 	void Absorb(Lacuna* Inflow);
 	double Triangulate(double rad);
+	void TriangulateForViz(double rad, list<QPair<int, int>>& Edges, vector<double>& Vert);
 };
 
 

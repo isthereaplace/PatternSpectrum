@@ -104,7 +104,7 @@
     <ClCompile Include="..\SkeletonLib\StructureTD.cpp" />
     <ClCompile Include="..\SkeletonLib\TreeAVL.cpp" />
     <ClCompile Include="..\SkeletonLib\TriDel.cpp" />
-    <ClCompile Include="main_gsg.cpp" />
+    <ClCompile Include="main_psg.cpp" />
     <ClCompile Include="mypainter.cpp" />
     <ClCompile Include="patternspectrumgui.cpp" />
     <ClCompile Include="qcustomplot.cpp" />

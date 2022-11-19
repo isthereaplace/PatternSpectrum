@@ -29,7 +29,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main_gsg.cpp">
+    <ClCompile Include="main_psg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="patternspectrumgui.cpp">
