@@ -29,7 +29,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="main_psc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PatternSpectrum.cpp">

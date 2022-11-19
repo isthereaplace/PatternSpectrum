@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PatternSpectrumConsole", "P
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GeneralizedSpectrumConsole", "GeneralizedSpectrumConsole\GeneralizedSpectrumConsole.vcxproj", "{36E2D928-25B9-452F-BD1C-829D50CEE4CE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PatternSpectrumGUI", "PatternSpectrumGUI\PatternSpectrumGUI.vcxproj", "{13DBCE5F-343D-40C1-A64A-AA014A346290}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,10 @@ Global
 		{36E2D928-25B9-452F-BD1C-829D50CEE4CE}.Debug|x64.Build.0 = Debug|x64
 		{36E2D928-25B9-452F-BD1C-829D50CEE4CE}.Release|x64.ActiveCfg = Release|x64
 		{36E2D928-25B9-452F-BD1C-829D50CEE4CE}.Release|x64.Build.0 = Release|x64
+		{13DBCE5F-343D-40C1-A64A-AA014A346290}.Debug|x64.ActiveCfg = Debug|x64
+		{13DBCE5F-343D-40C1-A64A-AA014A346290}.Debug|x64.Build.0 = Debug|x64
+		{13DBCE5F-343D-40C1-A64A-AA014A346290}.Release|x64.ActiveCfg = Release|x64
+		{13DBCE5F-343D-40C1-A64A-AA014A346290}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

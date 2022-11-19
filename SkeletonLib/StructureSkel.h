@@ -78,7 +78,6 @@ struct Lacuna {
 	QColor color;
 
 	void Absorb(Lacuna* Inflow);
-	void Expand(TNode* Node, double rad);
 	double Triangulate(double rad);
 };
 

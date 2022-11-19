@@ -95,7 +95,7 @@
     <ClCompile Include="..\SkeletonLib\TreeAVL.cpp" />
     <ClCompile Include="..\SkeletonLib\TriDel.cpp" />
     <ClCompile Include="GeneralizedSpectrum.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="main_gsc.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\PatternSpectrumConsole\PatternSpectrum.h" />

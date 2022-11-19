@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{2C906F72-313C-4706-B889-F17CBECCB7DA}</ProjectGuid>
+    <ProjectGuid>{13DBCE5F-343D-40C1-A64A-AA014A346290}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
@@ -32,12 +32,12 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>5.12.9_msvc2017_64</QtInstall>
-    <QtModules>core</QtModules>
+    <QtModules>gui;widgets;printsupport</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtInstall>5.12.9_msvc2017_64</QtInstall>
-    <QtModules>core</QtModules>
+    <QtModules>gui;widgets;printsupport;</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
@@ -58,6 +58,16 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
   </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>SPECTRUMGUI;</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>SPECTRUMGUI;$(Qt_DEFINES_);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
@@ -67,7 +77,7 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -80,11 +90,12 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\PatternSpectrumConsole\PatternSpectrum.cpp" />
     <ClCompile Include="..\SkeletonLib\BSTrans.cpp" />
     <ClCompile Include="..\SkeletonLib\ContourTracer.cpp" />
     <ClCompile Include="..\SkeletonLib\Geometry.cpp" />
@@ -93,8 +104,16 @@
     <ClCompile Include="..\SkeletonLib\StructureTD.cpp" />
     <ClCompile Include="..\SkeletonLib\TreeAVL.cpp" />
     <ClCompile Include="..\SkeletonLib\TriDel.cpp" />
-    <ClCompile Include="main_psc.cpp" />
-    <ClCompile Include="PatternSpectrum.cpp" />
+    <ClCompile Include="main_gsg.cpp" />
+    <ClCompile Include="mypainter.cpp" />
+    <ClCompile Include="patternspectrumgui.cpp" />
+    <ClCompile Include="qcustomplot.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="patternspectrumgui.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="qcustomplot.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SkeletonLib\BitRaster.h" />
@@ -108,7 +127,10 @@
     <ClInclude Include="..\SkeletonLib\StructureTD.h" />
     <ClInclude Include="..\SkeletonLib\TreeAVL.h" />
     <ClInclude Include="..\SkeletonLib\TriDel.h" />
-    <ClInclude Include="PatternSpectrum.h" />
+    <QtMoc Include="mypainter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="patternspectrumgui.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

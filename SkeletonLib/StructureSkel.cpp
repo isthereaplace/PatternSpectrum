@@ -917,24 +917,15 @@ void Lacuna::Absorb(Lacuna* Inflow) {
 }
 
 
-void Lacuna::Expand(TNode* Node, double rad) {
-	for (int i = 0; i < 3 && Node->Bones[i] != NULL; i++) {
-		if (Node->Bones[i]->Lacuna == NULL) {
-			this->Bones.push_back(Node->Bones[i]);
-			Node->Bones[i]->Lacuna = this;
-			if (Node->Bones[i]->dest->r() < rad)
-				Expand(Node->Bones[i]->dest, rad);
-		}
-	}
-}
-
-
 Lacuna* TNode::UpdateLacunas() {
 	int NumIn;
 	Lacuna* L = NULL;
 	switch (Kind())
 	{
 	case Out1_In0:
+		L = new Lacuna();
+		L->Bones.push_back(Bones[0]);
+		Bones[0]->Lacuna = L;
 		break;
 	case Out2_In0:
 		L = new Lacuna();

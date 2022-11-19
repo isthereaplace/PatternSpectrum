@@ -21,18 +21,24 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
-    <Filter Include="Header Files\SkeletonLib">
-      <UniqueIdentifier>{e39356bc-f6df-406c-8453-24f5e11420fc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\SkeletonLib">
-      <UniqueIdentifier>{a002a166-650a-4cca-a7a2-74e76b3e0fe8}</UniqueIdentifier>
+      <UniqueIdentifier>{893db238-63f6-4892-a806-de9ac0ddd7fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SkeletonLib">
+      <UniqueIdentifier>{0ae2ea30-e001-47fe-845f-c9a817e4a019}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main_gsc.cpp">
+    <ClCompile Include="main_gsg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeneralizedSpectrum.cpp">
+    <ClCompile Include="patternspectrumgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qcustomplot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PatternSpectrumConsole\PatternSpectrum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\SkeletonLib\BSTrans.cpp">
@@ -59,14 +65,22 @@
     <ClCompile Include="..\SkeletonLib\TriDel.cpp">
       <Filter>Source Files\SkeletonLib</Filter>
     </ClCompile>
-    <ClCompile Include="..\PatternSpectrumConsole\PatternSpectrum.cpp">
+    <ClCompile Include="mypainter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GeneralizedSpectrum.h">
+    <QtMoc Include="patternspectrumgui.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
+    </QtMoc>
+    <QtMoc Include="qcustomplot.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mypainter.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="..\SkeletonLib\BitRaster.h">
       <Filter>Header Files\SkeletonLib</Filter>
     </ClInclude>
@@ -100,8 +114,10 @@
     <ClInclude Include="..\SkeletonLib\delaunator.hpp">
       <Filter>Header Files\SkeletonLib</Filter>
     </ClInclude>
-    <ClInclude Include="..\PatternSpectrumConsole\PatternSpectrum.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="patternspectrumgui.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>

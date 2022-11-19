@@ -134,35 +134,15 @@ void PatternSpectrum::CalcSpectrum() {
 					skeleton->Lacunas.push_back(Lacn);
 				iNode = skeleton->AllNodes.erase(iNode);
 			}
-			/*
-			for (auto iLacn = skeleton->Lacunas.begin(); iLacn != skeleton->Lacunas.end(); iLacn++) {
-				delete *iLacn;
-			}
-			skeleton->Lacunas.clear();
-			for (auto iBone = skeleton->AllBones.begin(); iBone != skeleton->AllBones.end() && (*iBone)->org->r() < radius; iBone++)
-				(*iBone)->Lacuna = NULL;
-			for (auto iBone = skeleton->AllBones.begin(); iBone != skeleton->AllBones.end() && (*iBone)->org->r() < radius; iBone++) {
-				if ((*iBone)->Lacuna == NULL) {
-					Lacuna* Lacn = new Lacuna();
-					skeleton->Lacunas.push_back(Lacn);
-					Lacn->Expand((*iBone)->org, radius);
-				}
-			}
-			*/
+
 			auto iLacn = skeleton->Lacunas.begin();
 			while (iLacn != skeleton->Lacunas.end()) {
-				if ((*iLacn)->Bones.size() < 2) {
+				values[iRad] -= (*iLacn)->Triangulate(radius);
+				if ((*iLacn)->Bones.empty()) {
 					delete *iLacn;
 					iLacn = skeleton->Lacunas.erase(iLacn);
 				}
-				else {
-					values[iRad] -= (*iLacn)->Triangulate(radius);
-					if ((*iLacn)->Bones.empty()) {
-						delete *iLacn;
-						iLacn = skeleton->Lacunas.erase(iLacn);
-					}
-					else iLacn++;
-				}
+				else iLacn++;
 			}
 		}
 		else {
