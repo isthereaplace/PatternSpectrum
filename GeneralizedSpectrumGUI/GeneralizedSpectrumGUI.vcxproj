@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{13DBCE5F-343D-40C1-A64A-AA014A346290}</ProjectGuid>
+    <ProjectGuid>{6CCE93B5-F02D-4429-B340-5BD42D1FF13B}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
@@ -32,7 +32,7 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>5.12.9_msvc2017_64</QtInstall>
-    <QtModules>gui;widgets;printsupport</QtModules>
+    <QtModules>gui;widgets;printsupport;</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
@@ -60,12 +60,12 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>SPECTRUMGUI;</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SPECTRUMGUI;$(Qt_DEFINES_);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>SPECTRUMGUI;$(Qt_DEFINES_);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SPECTRUMGUI;</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -95,7 +95,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\GeneralizedSpectrumConsole\GeneralizedSpectrum.cpp" />
     <ClCompile Include="..\PatternSpectrumConsole\PatternSpectrum.cpp" />
+    <ClCompile Include="..\PatternSpectrumGUI\mypainter.cpp" />
+    <ClCompile Include="..\PatternSpectrumGUI\qcustomplot.cpp" />
     <ClCompile Include="..\SkeletonLib\BSTrans.cpp" />
     <ClCompile Include="..\SkeletonLib\ContourTracer.cpp" />
     <ClCompile Include="..\SkeletonLib\Geometry.cpp" />
@@ -104,19 +107,14 @@
     <ClCompile Include="..\SkeletonLib\StructureTD.cpp" />
     <ClCompile Include="..\SkeletonLib\TreeAVL.cpp" />
     <ClCompile Include="..\SkeletonLib\TriDel.cpp" />
-    <ClCompile Include="main_psg.cpp" />
-    <ClCompile Include="mypainter.cpp" />
-    <ClCompile Include="patternspectrumgui.cpp" />
-    <ClCompile Include="qcustomplot.cpp" />
+    <ClCompile Include="generalizedspectrumgui.cpp" />
+    <ClCompile Include="main_gsg.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="patternspectrumgui.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="qcustomplot.h" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="..\GeneralizedSpectrumConsole\GeneralizedSpectrum.h" />
     <ClInclude Include="..\PatternSpectrumConsole\PatternSpectrum.h" />
+    <QtMoc Include="..\PatternSpectrumGUI\qcustomplot.h" />
+    <QtMoc Include="..\PatternSpectrumGUI\mypainter.h" />
     <ClInclude Include="..\SkeletonLib\BitRaster.h" />
     <ClInclude Include="..\SkeletonLib\BSTrans.h" />
     <ClInclude Include="..\SkeletonLib\ContourTracer.h" />
@@ -128,13 +126,13 @@
     <ClInclude Include="..\SkeletonLib\StructureTD.h" />
     <ClInclude Include="..\SkeletonLib\TreeAVL.h" />
     <ClInclude Include="..\SkeletonLib\TriDel.h" />
-    <QtMoc Include="mypainter.h" />
+    <QtMoc Include="generalizedspectrumgui.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="patternspectrumgui.ui" />
+    <QtRcc Include="generalizedspectrumgui.qrc" />
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="patternspectrumgui.qrc" />
+    <QtUic Include="generalizedspectrumgui.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

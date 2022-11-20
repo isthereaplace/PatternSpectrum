@@ -22,25 +22,13 @@
       <Extensions>ts</Extensions>
     </Filter>
     <Filter Include="Source Files\SkeletonLib">
-      <UniqueIdentifier>{893db238-63f6-4892-a806-de9ac0ddd7fe}</UniqueIdentifier>
+      <UniqueIdentifier>{06a90135-d310-4572-8b05-9b591c0263e2}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\SkeletonLib">
-      <UniqueIdentifier>{0ae2ea30-e001-47fe-845f-c9a817e4a019}</UniqueIdentifier>
+      <UniqueIdentifier>{ffba39e8-a7f2-4a25-b8b9-d34870dcb8f1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main_psg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="patternspectrumgui.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="qcustomplot.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\PatternSpectrumConsole\PatternSpectrum.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\SkeletonLib\BSTrans.cpp">
       <Filter>Source Files\SkeletonLib</Filter>
     </ClCompile>
@@ -65,20 +53,24 @@
     <ClCompile Include="..\SkeletonLib\TriDel.cpp">
       <Filter>Source Files\SkeletonLib</Filter>
     </ClCompile>
-    <ClCompile Include="mypainter.cpp">
+    <ClCompile Include="generalizedspectrumgui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="patternspectrumgui.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="qcustomplot.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="mypainter.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
+    <ClCompile Include="main_gsg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PatternSpectrumGUI\mypainter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PatternSpectrumGUI\qcustomplot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GeneralizedSpectrumConsole\GeneralizedSpectrum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PatternSpectrumConsole\PatternSpectrum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SkeletonLib\BitRaster.h">
@@ -88,6 +80,9 @@
       <Filter>Header Files\SkeletonLib</Filter>
     </ClInclude>
     <ClInclude Include="..\SkeletonLib\ContourTracer.h">
+      <Filter>Header Files\SkeletonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SkeletonLib\delaunator.hpp">
       <Filter>Header Files\SkeletonLib</Filter>
     </ClInclude>
     <ClInclude Include="..\SkeletonLib\Geometry.h">
@@ -111,21 +106,32 @@
     <ClInclude Include="..\SkeletonLib\TriDel.h">
       <Filter>Header Files\SkeletonLib</Filter>
     </ClInclude>
-    <ClInclude Include="..\SkeletonLib\delaunator.hpp">
-      <Filter>Header Files\SkeletonLib</Filter>
+    <ClInclude Include="..\GeneralizedSpectrumConsole\GeneralizedSpectrum.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\PatternSpectrumConsole\PatternSpectrum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="patternspectrumgui.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
+    <QtMoc Include="generalizedspectrumgui.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\PatternSpectrumGUI\mypainter.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\PatternSpectrumGUI\qcustomplot.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="patternspectrumgui.qrc">
+    <QtRcc Include="generalizedspectrumgui.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="generalizedspectrumgui.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>
